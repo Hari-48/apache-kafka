@@ -21,7 +21,7 @@ public class CabLocationController {
     @PutMapping
     public ResponseEntity<?> updateLocation() throws InterruptedException {
 
-        int range = 10;
+        int range = 5;
         while (range > 0) {
             //System.out.println(Math.random() + " , " + Math.random());
             cabLocationService.updateLocation(Math.random() + " , " + Math.random());

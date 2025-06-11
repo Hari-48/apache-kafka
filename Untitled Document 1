@@ -1,0 +1,50 @@
+hariharasudhan@FS-DEV-L-IN-07:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+hariharasudhan@FS-DEV-L-IN-07:~$ cd
+hariharasudhan@FS-DEV-L-IN-07:~$ ls
+Builderspecification  Docker                           Documents  Elastic                       erlang-solutions_2.0_all.deb.1  Hack.sql  MultiThread  my-react-app  snap          Videos
+Desktop               docker-desktop-4.28.0-amd64.deb  Downloads  erlang-solutions_2.0_all.deb  frontend                        Hari      Music        Pictures      spring-batch
+hariharasudhan@FS-DEV-L-IN-07:~$ cd Documents
+hariharasudhan@FS-DEV-L-IN-07:~/Documents$ ls
+front-end  GIT  Jenkins  report-designer  tv  TV
+hariharasudhan@FS-DEV-L-IN-07:~/Documents$ Jenkins
+Jenkins: command not found
+hariharasudhan@FS-DEV-L-IN-07:~/Documents$ cd Jenkins
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ docker composer up -d
+unknown shorthand flag: 'd' in -d
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ docker compose up -d
+WARN[0000] /home/hariharasudhan/Documents/Jenkins/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[+] Running 13/13
+ ✔ jenkins Pulled                                                                                                                                                                                           374.2s 
+   ✔ cf05a52c0235 Pull complete                                                                                                                                                                             339.9s 
+   ✔ 7ccee2ccb16f Pull complete                                                                                                                                                                             355.4s 
+   ✔ 1e0adc669c69 Pull complete                                                                                                                                                                             355.6s 
+   ✔ 1dae579966be Pull complete                                                                                                                                                                             355.6s 
+   ✔ b59aedb439de Pull complete                                                                                                                                                                             355.7s 
+   ✔ 4889d12fb2c3 Pull complete                                                                                                                                                                             356.3s 
+   ✔ 6e9c23e5660b Pull complete                                                                                                                                                                             356.3s 
+   ✔ bfa1925140b2 Pull complete                                                                                                                                                                             356.4s 
+   ✔ 115fd2172889 Pull complete                                                                                                                                                                             366.2s 
+   ✔ 319741246a0e Pull complete                                                                                                                                                                             366.2s 
+   ✔ 4f318a2a0da7 Pull complete                                                                                                                                                                             366.2s 
+   ✔ 7900846016b7 Pull complete                                                                                                                                                                             366.2s 
+[+] Running 3/3
+ ✔ Network jenkins_default        Created                                                                                                                                                                     0.1s 
+ ✔ Volume "jenkins_jenkins_home"  Created                                                                                                                                                                     0.0s 
+ ✔ Container jenkins              Started                                                                                                                                                                     0.8s 
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                                                                          NAMES
+ee7d214029c3   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   40 seconds ago   Up 39 seconds   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp   jenkins
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+911a49e801bb4b019168fc9a03a6eb80
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ ls
+docker-compose.yaml
+hariharasudhan@FS-DEV-L-IN-07:~/Documents/Jenkins$ 
+
+
+
+
